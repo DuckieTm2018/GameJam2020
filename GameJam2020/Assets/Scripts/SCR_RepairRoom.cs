@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
+using UnityEngine.SceneManagement;
 
 public class SCR_RepairRoom : MonoBehaviour
 {
@@ -11,33 +12,45 @@ public class SCR_RepairRoom : MonoBehaviour
     public float countDownSeconds;
     public bool isRoomRepaired;
     public bool startRoom;
-    private static Timer countDown;
+  
     public GameObject nextRoom;
     private SCR_RepairRoom nextRepairRoom;
+    private bool active;
+    private float countDown;
+
 
     void Start()
     {
         if(nextRoom != null)
             nextRepairRoom = nextRoom.GetComponent<SCR_RepairRoom>();
-        if (startRoom)
+
+        if (startRoom && !active)
             Activate();
+
+        var count = countDownSeconds * 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (active) 
+        {
+            if (countDown <= 0.0f) 
+            {
+                active = false;
+                TimeRanOut();
+            }
+            else if (countDown > 0.0f)
+            {
+                countDown -= Time.deltaTime;
+            }
+        }
     }
 
     internal void Activate() 
     {
         Debug.Log($"{RoomName}'s timer has started.");
-        countDown = new Timer()
-        {
-            Interval = countDownSeconds * 60,
-            Enabled = true
-        };
-        countDown.Elapsed += TimeRanOut;
+        active = true;
     }
 
     internal void UpdateRepairPoint(int id)
@@ -50,7 +63,7 @@ public class SCR_RepairRoom : MonoBehaviour
         {
             Debug.Log($"Room {RoomName} has been repaired.");
 
-            countDown.Enabled = false;
+            active = false;
             isRoomRepaired = true;
             if (nextRepairRoom == null) 
             {
@@ -63,8 +76,9 @@ public class SCR_RepairRoom : MonoBehaviour
         }
     }
 
-    private void TimeRanOut(object sender, ElapsedEventArgs e)
+    public void TimeRanOut() 
     {
-        throw new NotImplementedException();
+        Debug.Log($"Time Ran out.");
+        SceneManager.LoadScene(1);
     }
 }
