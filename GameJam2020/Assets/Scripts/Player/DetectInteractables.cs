@@ -8,8 +8,8 @@ public class DetectInteractables : MonoBehaviour
     public Camera playerCamera;
     public Canvas uiCanvas;
     public Text uiText;
-    public TeleportScript tpScript;
     public RaycastHit hit;
+    public float raycastLength;
 
     // Start is called before the first frame update
     void Start()
@@ -23,25 +23,30 @@ public class DetectInteractables : MonoBehaviour
         //RaycastHit hit;
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition) ;
 
-        if (Physics.Raycast(ray, out hit, 2))
-        {
-            Transform objectHit = hit.transform;
+        var hits = Physics.RaycastAll(ray, raycastLength);
 
-            if (hit.collider.gameObject.name == "Teleporter 1" || hit.collider.gameObject.name == "Teleporter 2")
+        uiText.enabled = false;
+
+        foreach (var hit in hits) 
+        { 
+            Transform objectHit = hit.transform;
+            IInteract interactable = hit.collider.gameObject.GetComponent<IInteract>();
+
+            if (interactable != null && interactable.CanInteract())
             {
                 uiText.enabled = true;
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    tpScript.TeleportPlayer();
+                    Debug.Log("can interact with object.");
+                    interactable.Use();
                 }
-            }
-            else
-            {
-                uiText.enabled = false;
+                break;
             }
         }
-        else
-        {
+
+        if(hits.Length == 0) 
+        { 
             uiText.enabled = false;
         }
     }

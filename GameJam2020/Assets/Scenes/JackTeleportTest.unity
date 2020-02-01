@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 534234461}
   - component: {fileID: 534234460}
   - component: {fileID: 534234459}
+  - component: {fileID: 534234463}
   m_Layer: 0
   m_Name: Teleporter 1
   m_TagString: Untagged
@@ -203,6 +204,20 @@ Transform:
   m_Father: {fileID: 1836465031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534234463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534234458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab7f4b5b0f5ed041bde69261c41e607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1944612485}
+  otherTeleport: {fileID: 2093893870}
 --- !u!1 &777204902
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +767,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1836465031}
-  - component: {fileID: 1836465030}
   m_Layer: 0
   m_Name: Teleporters
   m_TagString: Untagged
@@ -760,22 +774,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1836465030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836465029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aab7f4b5b0f5ed041bde69261c41e607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  findTP: {fileID: 1944612493}
-  player: {fileID: 1944612485}
-  tp1: {fileID: 534234458}
-  tp2: {fileID: 2093893870}
 --- !u!4 &1836465031
 Transform:
   m_ObjectHideFlags: 0
@@ -851,6 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 7
   walkSpeed: 5
+  crouchSpeed: 2
   speed: 10
   gravity: 10
   maxVelocityChange: 10
@@ -961,7 +960,6 @@ MonoBehaviour:
   playerCamera: {fileID: 853843670}
   uiCanvas: {fileID: 1810802222}
   uiText: {fileID: 777204904}
-  tpScript: {fileID: 1836465030}
 --- !u!1 &2093893870
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +972,7 @@ GameObject:
   - component: {fileID: 2093893874}
   - component: {fileID: 2093893873}
   - component: {fileID: 2093893872}
+  - component: {fileID: 2093893871}
   m_Layer: 0
   m_Name: Teleporter 2
   m_TagString: Untagged
@@ -981,6 +980,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2093893871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093893870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab7f4b5b0f5ed041bde69261c41e607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1944612485}
+  otherTeleport: {fileID: 534234458}
 --- !u!65 &2093893872
 BoxCollider:
   m_ObjectHideFlags: 0
