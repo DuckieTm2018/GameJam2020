@@ -79,6 +79,7 @@ public class SCR_RepairRoom : MonoBehaviour
     public void TimeRanOut() 
     {
         Debug.Log($"Time Ran out.");
+        Screen.lockCursor = false;
         SceneManager.LoadScene(1);
     }
 }
