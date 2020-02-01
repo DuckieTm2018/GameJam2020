@@ -1,83 +1,105 @@
 fileFormatVersion: 2
-guid: 007e36999ccfe5a42afd48adb1023173
+guid: 8b32f413da278b84782437928db4a114
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: L_Arm_ctrl
-    100004: L_Elbow_ctrl
-    100006: L_Index_ctrl1
-    100008: L_Index_ctrl2
-    100010: L_Index_ctrl3
-    100012: L_Long_ctrl1
-    100014: L_Long_ctrl2
-    100016: L_Long_ctrl3
-    100018: L_Pinkie_ctrl1
-    100020: L_Pinkie_ctrl2
-    100022: L_Pinkie_ctrl3
-    100024: L_Ring_ctrl1
-    100026: L_Ring_ctrl2
-    100028: L_Ring_ctrl3
-    100030: L_Thumb_ctrl1
-    100032: L_Thumb_ctrl2
-    100034: L_Thumb_ctrl3
-    100036: L_Wrist_ctrl
-    100038: R_Arm_ctrl1
-    100040: R_Elbow_ctrl
-    100042: R_Index_ctrl1
-    100044: R_Index_ctrl2
-    100046: R_Index_ctrl3
-    100048: R_Long_ctrl1
-    100050: R_Long_ctrl2
-    100052: R_Long_ctrl3
-    100054: R_Pinkie_ctrl1
-    100056: R_Pinkie_ctrl2
-    100058: R_Pinkie_ctrl3
-    100060: R_Ring_ctrl1
-    100062: R_Ring_ctrl2
-    100064: R_Ring_ctrl3
-    100066: R_Thumb_ctrl1
-    100068: R_Thumb_ctrl2
-    100070: R_Thumb_ctrl3
-    100072: R_Wrist_ctrl
+    100002: joint1
+    100004: joint1 1
+    100006: joint2
+    100008: joint2 1
+    100010: joint3
+    100012: joint3 1
+    100014: L_Arm
+    100016: L_Elbow
+    100018: L_Index1
+    100020: L_Index2
+    100022: L_Index3
+    100024: L_Index4
+    100026: L_Long1
+    100028: L_Long2
+    100030: L_Long3
+    100032: L_Long4
+    100034: L_Pinky1
+    100036: L_Pinky2
+    100038: L_Pinky3
+    100040: L_Pinky4
+    100042: L_Ring1
+    100044: L_Ring2
+    100046: L_Ring3
+    100048: L_Ring4
+    100050: L_Shoulder
+    100052: L_Thumb1
+    100054: L_Wrist
+    100056: R_Arm
+    100058: R_Elbow
+    100060: R_Index1
+    100062: R_Index2
+    100064: R_Index3
+    100066: R_Index4
+    100068: R_Long1
+    100070: R_Long2
+    100072: R_Long3
+    100074: R_Long4
+    100076: R_Pinky1
+    100078: R_Pinky2
+    100080: R_Pinky3
+    100082: R_Pinky4
+    100084: R_Ring1
+    100086: R_Ring2
+    100088: R_Ring3
+    100090: R_Ring4
+    100092: R_Thumb1
+    100094: R_Wrist
     400000: //RootNode
-    400002: L_Arm_ctrl
-    400004: L_Elbow_ctrl
-    400006: L_Index_ctrl1
-    400008: L_Index_ctrl2
-    400010: L_Index_ctrl3
-    400012: L_Long_ctrl1
-    400014: L_Long_ctrl2
-    400016: L_Long_ctrl3
-    400018: L_Pinkie_ctrl1
-    400020: L_Pinkie_ctrl2
-    400022: L_Pinkie_ctrl3
-    400024: L_Ring_ctrl1
-    400026: L_Ring_ctrl2
-    400028: L_Ring_ctrl3
-    400030: L_Thumb_ctrl1
-    400032: L_Thumb_ctrl2
-    400034: L_Thumb_ctrl3
-    400036: L_Wrist_ctrl
-    400038: R_Arm_ctrl1
-    400040: R_Elbow_ctrl
-    400042: R_Index_ctrl1
-    400044: R_Index_ctrl2
-    400046: R_Index_ctrl3
-    400048: R_Long_ctrl1
-    400050: R_Long_ctrl2
-    400052: R_Long_ctrl3
-    400054: R_Pinkie_ctrl1
-    400056: R_Pinkie_ctrl2
-    400058: R_Pinkie_ctrl3
-    400060: R_Ring_ctrl1
-    400062: R_Ring_ctrl2
-    400064: R_Ring_ctrl3
-    400066: R_Thumb_ctrl1
-    400068: R_Thumb_ctrl2
-    400070: R_Thumb_ctrl3
-    400072: R_Wrist_ctrl
-    7400000: Run
+    400002: joint1
+    400004: joint1 1
+    400006: joint2
+    400008: joint2 1
+    400010: joint3
+    400012: joint3 1
+    400014: L_Arm
+    400016: L_Elbow
+    400018: L_Index1
+    400020: L_Index2
+    400022: L_Index3
+    400024: L_Index4
+    400026: L_Long1
+    400028: L_Long2
+    400030: L_Long3
+    400032: L_Long4
+    400034: L_Pinky1
+    400036: L_Pinky2
+    400038: L_Pinky3
+    400040: L_Pinky4
+    400042: L_Ring1
+    400044: L_Ring2
+    400046: L_Ring3
+    400048: L_Ring4
+    400050: L_Shoulder
+    400052: L_Thumb1
+    400054: L_Wrist
+    400056: R_Arm
+    400058: R_Elbow
+    400060: R_Index1
+    400062: R_Index2
+    400064: R_Index3
+    400066: R_Index4
+    400068: R_Long1
+    400070: R_Long2
+    400072: R_Long3
+    400074: R_Long4
+    400076: R_Pinky1
+    400078: R_Pinky2
+    400080: R_Pinky3
+    400082: R_Pinky4
+    400084: R_Ring1
+    400086: R_Ring2
+    400088: R_Ring3
+    400090: R_Ring4
+    400092: R_Thumb1
+    400094: R_Wrist
+    7400000: idle_Crouch
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -142,7 +164,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human: []
@@ -158,7 +180,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 97ef619fdc2a1684c8f3b9dcc137adad,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0

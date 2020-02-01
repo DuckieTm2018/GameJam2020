@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: e873f9c14abf1ec4d87a8e41ee2a77c5
+guid: 97ef619fdc2a1684c8f3b9dcc137adad
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Arms
+    100000: Arms1
     100002: Controllers
     100004: joint1
     100006: joint1 1
@@ -89,7 +89,7 @@ ModelImporter:
     100166: R_Thumb_ctrl3
     100168: R_Wrist
     100170: R_Wrist_ctrl
-    400000: Arms
+    400000: Arms1
     400002: Controllers
     400004: joint1
     400006: joint1 1
@@ -175,10 +175,10 @@ ModelImporter:
     400166: R_Thumb_ctrl3
     400168: R_Wrist
     400170: R_Wrist_ctrl
-    2100000: lambert1
-    4300000: Arms
+    2100000: Arms_texture
+    4300000: Arms1
     9500000: //RootNode
-    13700000: Arms
+    13700000: Arms1
   externalObjects: {}
   materials:
     importMaterials: 1

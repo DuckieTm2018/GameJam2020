@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a722380f764b6948a62970d5a416c6a
+guid: b6a72ac1e6a69e64087d064120a25c6a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -99,7 +99,7 @@ ModelImporter:
     400090: R_Ring4
     400092: R_Thumb1
     400094: R_Wrist
-    7400000: Jump
+    7400000: Idle
     9500000: //RootNode
   externalObjects: {}
   materials:
