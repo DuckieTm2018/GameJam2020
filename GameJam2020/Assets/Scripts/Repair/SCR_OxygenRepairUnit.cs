@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SCR_GenericRepairUnit : BaseRepairUnit
+public class SCR_OxygenRepairUnit : BaseRepairUnit
 {
+    public float addedTimeOnRepair;
+
     public override bool CanInteract()
     {
         return !base.repaired;
@@ -11,9 +13,11 @@ public class SCR_GenericRepairUnit : BaseRepairUnit
 
     public override void Use()
     {
-        if (!base.repaired)
+        Debug.Log("Repaired oxygen console.");
+        if (!base.repaired) 
         {
             base.Repaired();
+            base.repairRoom.countDown += addedTimeOnRepair;
         }
     }
 
@@ -27,6 +31,6 @@ public class SCR_GenericRepairUnit : BaseRepairUnit
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseRepairUnit : MonoBehaviour
+public abstract class BaseRepairUnit : MonoBehaviour, IInteract
 {
     int Id;
     public GameObject room;
-    private SCR_RepairRoom repairRoom;
+    public SCR_RepairRoom repairRoom;
     public List<KeyValuePair<int, bool>> repairPoints = new List<KeyValuePair<int, bool>>();
+    public bool requiresParts;
+    public bool repaired;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         repairRoom = room.GetComponent<SCR_RepairRoom>();
+
         Id = repairRoom.repairUnits.Count + 1;
         repairRoom.repairUnits.Add(new KeyValuePair<int, bool>(this.Id, false));
     }
@@ -23,7 +26,7 @@ public abstract class BaseRepairUnit : MonoBehaviour
         
     }
 
-    internal void UpdateRepairPoint(int id)
+    internal void UpdateRepairPoints(int id)
     {
         Debug.Log($"Point {id} for {Id} has been repaired.");
         repairPoints.RemoveAll(r => r.Key == id);
@@ -31,10 +34,18 @@ public abstract class BaseRepairUnit : MonoBehaviour
 
         if (repairPoints.FindAll(r => r.Value).Count == repairPoints.Count)
         {
-            repairRoom.UpdateRepairUnits(Id);
             Repaired();
         }
     }
 
-    internal abstract void Repaired();
+    internal void Repaired() 
+    {
+        Debug.Log($"Unit Id: {Id}");
+        repairRoom.UpdateRepairUnits(Id);
+        repaired = true;
+    }
+
+    public abstract void Use();
+
+    public abstract bool CanInteract();
 }

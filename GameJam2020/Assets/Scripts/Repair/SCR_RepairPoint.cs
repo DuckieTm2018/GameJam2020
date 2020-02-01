@@ -32,7 +32,7 @@ public class SCR_RepairPoint : MonoBehaviour, IInteract
         partRequired.SetActive(false);
 
         repaired = true;
-        repairUnit.UpdateRepairPoint(Id);
+        repairUnit.UpdateRepairPoints(Id);
     }
 
     public bool CanInteract()

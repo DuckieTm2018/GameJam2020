@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9073854349228107801}
   - component: {fileID: 9073854349228107800}
   m_Layer: 0
-  m_Name: RepairPart
+  m_Name: TestRepairPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
