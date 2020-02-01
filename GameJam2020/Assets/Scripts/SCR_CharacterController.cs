@@ -14,17 +14,28 @@ public class SCR_CharacterController : MonoBehaviour
     public float jumpHeight = 2.0f;
     private bool grounded = false;
 
-    private 
+    private float height;
+    private float distance; //distance to ground
+    private Transform tr;
+    private CapsuleCollider capsule;
+
 
 
     void Awake()
     {
         GetComponent<Rigidbody>().freezeRotation = true;
         GetComponent<Rigidbody>().useGravity = false;
+
+        tr = transform;
+        CapsuleCollider ch = GetComponent<CapsuleCollider>();
+        distance = ch.height / 2; //calculate the distance to the ground
+        
     }
 
     void FixedUpdate()
     {
+        float vScale = 1.0f;
+
         if (grounded)
         {
             // Calculate how fast we should be moving
@@ -52,6 +63,7 @@ public class SCR_CharacterController : MonoBehaviour
             else if (Input.GetKey(KeyCode.LeftControl))
             {
                 speed = crouchSpeed;
+                vScale = 0.5f;                
             }
             else
             {
@@ -60,8 +72,19 @@ public class SCR_CharacterController : MonoBehaviour
         }
         // We apply gravity manually for more turning control
         GetComponent<Rigidbody>().AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
-
         grounded = false;
+
+        float ultScale = tr.localScale.y;
+
+        Vector3 tmpScale = tr.localScale;
+        Vector3 tmpPosition = tr.position;
+
+        tmpScale.y = Mathf.Lerp(tr.localScale.y, vScale, 5 * Time.deltaTime);
+        tr.localScale = tmpScale;
+
+        tmpPosition.y += distance * (tr.localScale.y - ultScale); //fix vertical position
+        tr.position = tmpPosition; 
+
     }
 
     void OnCollisionStay()
