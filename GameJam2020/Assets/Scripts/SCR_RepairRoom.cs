@@ -54,7 +54,7 @@ public class SCR_RepairRoom : MonoBehaviour
             isRoomRepaired = true;
             if (nextRepairRoom == null) 
             {
-                Console.WriteLine($"Last room has been repaired.");
+                Debug.Log($"Last room has been repaired.");
 
                 // finished the game!
             }
