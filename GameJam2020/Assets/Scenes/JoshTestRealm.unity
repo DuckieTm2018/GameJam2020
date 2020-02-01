@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 425567096}
   - component: {fileID: 425567095}
   - component: {fileID: 425567094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,9 +142,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 425567093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 344423c4bd20eec4aa89ffbae0d400b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bc8b2dc2a643cc469c3a59c1a01f706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hands: {fileID: 1323522729}
+  held: 0
+  rb: {fileID: 0}
+  throwingPower: 1000
 --- !u!54 &425567095
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -310,9 +314,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853843668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24, y: 0.17000002, z: -0.09}
+  m_LocalPosition: {x: 0, y: 0.17000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1323522730}
   m_Father: {fileID: 1944612491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -331,10 +336,10 @@ MonoBehaviour:
   Axis: 2
   sensitivityX: 10
   sensitivityY: 10
-  minimumxX: -360
-  maximumX: 360
-  minimumY: -360
-  maximumY: 360
+  minimumxX: -90
+  maximumX: 90
+  minimumY: -90
+  maximumY: 90
   rotationX: 0
   rotationY: 0
   lookspeed: 2
@@ -367,9 +372,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089741663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356622809c8876449bbdb8dda29997f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e9d1cbb60938b44d88e61a099cfdf29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partRequired: {fileID: 425567093}
 --- !u!65 &1089741665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -440,7 +446,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1116435744
 GameObject:
@@ -454,7 +460,7 @@ GameObject:
   - component: {fileID: 1116435747}
   - component: {fileID: 1116435746}
   - component: {fileID: 1116435745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,12 +563,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323522729}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 853843671}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698292287
 GameObject:
@@ -690,7 +696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 10
-  walkSpeed: 1
+  walkSpeed: 5
+  crouchSpeed: 2
   speed: 10
   gravity: 10
   maxVelocityChange: 10
@@ -768,7 +775,7 @@ Transform:
   m_Children:
   - {fileID: 853843671}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1944612492
 Rigidbody:
