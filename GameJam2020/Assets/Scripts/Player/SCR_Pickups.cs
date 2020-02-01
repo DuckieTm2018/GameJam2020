@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SCR_Pickups : MonoBehaviour
+public class SCR_Pickups : MonoBehaviour, IInteract
 {
     public GameObject hands;
     public bool held;
@@ -15,20 +15,14 @@ public class SCR_Pickups : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void OnMouseOver()
+    public void Use()
     {
-        if (held == false)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                this.gameObject.transform.parent = hands.transform;
-                held = true;
-                rb.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
-                Physics.IgnoreLayerCollision(8,9, true);
-                transform.localPosition = new Vector3(0f, 0f, 0f);
-            }
-
-        }
+        Debug.Log("Pickup part.");
+        this.gameObject.transform.parent = hands.transform;
+        held = true;
+        rb.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+        Physics.IgnoreLayerCollision(8, 9, true);
+        transform.localPosition = new Vector3(0f, 0f, 0f);
     }
 
     void Update()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SCR_RepairPoint : MonoBehaviour
+public class SCR_RepairPoint : MonoBehaviour, IInteract
 {
     public int Id;
     public GameObject room;
@@ -17,17 +17,14 @@ public class SCR_RepairPoint : MonoBehaviour
         repairRoom.repairPoints.Add(new KeyValuePair<int, bool>(this.Id, false));
     }
 
-    void OnMouseOver()
+    public void Use()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (pickups.held == true)
         {
-            if (pickups.held == true)
-            {
-                pickups.held = false;
-                partRequired.transform.parent = null;
-                partRequired.SetActive(false);
-                repairRoom.UpdateRepairPoint(Id);
-            }
+            pickups.held = false;
+            partRequired.transform.parent = null;
+            partRequired.SetActive(false);
+            repairRoom.UpdateRepairPoint(Id);
         }
     }
 }
