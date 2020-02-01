@@ -40,5 +40,9 @@ public class DetectInteractables : MonoBehaviour
                 uiText.enabled = false;
             }
         }
+        else
+        {
+            uiText.enabled = false;
+        }
     }
 }
