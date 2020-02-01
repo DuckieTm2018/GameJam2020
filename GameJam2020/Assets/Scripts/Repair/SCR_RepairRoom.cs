@@ -23,9 +23,6 @@ public class SCR_RepairRoom : MonoBehaviour
     {
         if(nextRoom != null)
             nextRepairRoom = nextRoom.GetComponent<SCR_RepairRoom>();
-
-        if (startRoom && !active)
-            Activate();
     }
 
     // Update is called once per frame
