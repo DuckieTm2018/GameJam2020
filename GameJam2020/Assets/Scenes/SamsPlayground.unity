@@ -148,7 +148,7 @@ MonoBehaviour:
   hands: {fileID: 1323522729}
   held: 0
   rb: {fileID: 0}
-  throwingPower: 1000
+  throwingPower: 5
 --- !u!54 &425567095
 Rigidbody:
   m_ObjectHideFlags: 0

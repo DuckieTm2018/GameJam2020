@@ -6,13 +6,15 @@ public class SCR_CharacterController : MonoBehaviour
 {
     public float runSpeed = 10.0f;
     public float walkSpeed = 5.0f;
+    public float crouchSpeed = 2.0f;
     public float speed;
     public float gravity = 10.0f;
     public float maxVelocityChange = 10.0f;
     public bool canJump = true;
     public float jumpHeight = 2.0f;
     private bool grounded = false;
-    private bool toggleRun = false;
+
+    private 
 
 
     void Awake()
@@ -42,14 +44,24 @@ public class SCR_CharacterController : MonoBehaviour
             {
                 GetComponent<Rigidbody>().velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
             }
-        }
 
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = runSpeed;
+            }
+            else if (Input.GetKey(KeyCode.LeftControl))
+            {
+                speed = crouchSpeed;
+            }
+            else
+            {
+                speed = walkSpeed;
+            }
+        }
         // We apply gravity manually for more turning control
         GetComponent<Rigidbody>().AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
 
         grounded = false;
-
-        speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
     }
 
     void OnCollisionStay()

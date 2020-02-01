@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepairPoint : MonoBehaviour
+public class SCR_RepairPoint : MonoBehaviour
 {
     public GameObject partRequired;
-    private Pickups pickups;
+    private SCR_Pickups pickups;
 
     void Start()
     {
-        pickups = partRequired.GetComponent<Pickups>();
+        pickups = partRequired.GetComponent<SCR_Pickups>();
     }
 
     void OnMouseOver()

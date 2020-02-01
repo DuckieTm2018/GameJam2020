@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickups : MonoBehaviour
+public class SCR_Pickups : MonoBehaviour
 {
     public GameObject hands;
     public bool held;
@@ -36,11 +36,13 @@ public class Pickups : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 held = false;
+                transform.parent = null;
                 rb.constraints = RigidbodyConstraints.None;
             }
             else if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 held = false;
+                transform.parent = null;
                 rb.constraints = RigidbodyConstraints.None;
                 rb.AddForce(hands.transform.forward * throwingPower);
             }
