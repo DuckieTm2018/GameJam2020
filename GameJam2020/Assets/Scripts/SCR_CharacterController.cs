@@ -16,8 +16,9 @@ public class SCR_CharacterController : MonoBehaviour
 
     private float height;
     private float distance; //distance to ground
-    private Transform tr;
-    private CapsuleCollider capsule;
+    public CapsuleCollider capsule;
+    public SphereCollider sphere;
+
 
 
 
@@ -26,16 +27,15 @@ public class SCR_CharacterController : MonoBehaviour
         GetComponent<Rigidbody>().freezeRotation = true;
         GetComponent<Rigidbody>().useGravity = false;
 
-        tr = transform;
-        CapsuleCollider ch = GetComponent<CapsuleCollider>();
-        distance = ch.height / 2; //calculate the distance to the ground
+  
+        capsule = GetComponent<CapsuleCollider>();
+        sphere = GetComponent<SphereCollider>();
+        distance = capsule.height / 2; //calculate the distance to the ground
         
     }
 
     void FixedUpdate()
     {
-        float vScale = 1.0f;
-
         if (grounded)
         {
             // Calculate how fast we should be moving
@@ -59,31 +59,28 @@ public class SCR_CharacterController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 speed = runSpeed;
+                sphere.enabled = false;
+                capsule.enabled = true;
             }
             else if (Input.GetKey(KeyCode.LeftControl))
             {
                 speed = crouchSpeed;
-                vScale = 0.5f;                
+                //capsule.height = 0.5f;
+                //capsule.center = new Vector3(capsule.center.x, 0.25f, capsule.center.z);
+
+                sphere.enabled = true;
+                capsule.enabled = false;
             }
             else
             {
                 speed = walkSpeed;
+                sphere.enabled = false;
+                capsule.enabled = true;
             }
         }
         // We apply gravity manually for more turning control
         GetComponent<Rigidbody>().AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
         grounded = false;
-
-        float ultScale = tr.localScale.y;
-
-        Vector3 tmpScale = tr.localScale;
-        Vector3 tmpPosition = tr.position;
-
-        tmpScale.y = Mathf.Lerp(tr.localScale.y, vScale, 5 * Time.deltaTime);
-        tr.localScale = tmpScale;
-
-        tmpPosition.y += distance * (tr.localScale.y - ultScale); //fix vertical position
-        tr.position = tmpPosition; 
 
     }
 
