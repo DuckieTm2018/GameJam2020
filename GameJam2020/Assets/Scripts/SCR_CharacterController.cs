@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class SCR_CharacterController : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float runSpeed = 10.0f;
+    public float walkSpeed = 5.0f;
+    public float speed;
     public float gravity = 10.0f;
     public float maxVelocityChange = 10.0f;
     public bool canJump = true;
     public float jumpHeight = 2.0f;
     private bool grounded = false;
-
+    private bool toggleRun = false;
 
 
     void Awake()
     {
-        //GetComponent<Rigidbody>().freezeRotation = true;
+        GetComponent<Rigidbody>().freezeRotation = true;
         GetComponent<Rigidbody>().useGravity = false;
     }
 
@@ -27,7 +29,6 @@ public class SCR_CharacterController : MonoBehaviour
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             targetVelocity = transform.TransformDirection(targetVelocity);
             targetVelocity *= speed;
-
             // Apply a force that attempts to reach our target velocity
             Vector3 velocity = GetComponent<Rigidbody>().velocity;
             Vector3 velocityChange = (targetVelocity - velocity);
@@ -43,10 +44,12 @@ public class SCR_CharacterController : MonoBehaviour
             }
         }
 
-        // We apply gravity manually for more tuning control
+        // We apply gravity manually for more turning control
         GetComponent<Rigidbody>().AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
 
         grounded = false;
+
+        speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
     }
 
     void OnCollisionStay()

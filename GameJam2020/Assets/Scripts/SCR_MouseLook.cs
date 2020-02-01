@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseLook : MonoBehaviour
+public class SCR_MouseLook : MonoBehaviour
 {
     public enum Axes { MouseXandY, MouseX, MouseY}
     public Axes Axis = Axes.MouseXandY;
