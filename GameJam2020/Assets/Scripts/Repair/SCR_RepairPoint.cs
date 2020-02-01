@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class SCR_RepairPoint : MonoBehaviour, IInteract
 {
-    public GameObject room;
+    public GameObject unit;
     public GameObject partRequired;
     public int Id;
     private SCR_Pickups pickup;
-    private SCR_RepairRoom repairRoom;
+    private BaseRepairUnit repairUnit;
 
     private bool repaired;
 
     void Start()
     {
         pickup = partRequired.GetComponent<SCR_Pickups>();
-        repairRoom = room.GetComponent<SCR_RepairRoom>();
-        Id = repairRoom.repairPoints.Count + 1;
-        repairRoom.repairPoints.Add(new KeyValuePair<int, bool>(this.Id, false));
+        repairUnit = unit.GetComponent<BaseRepairUnit>();
+
+        Id = repairUnit.repairPoints.Count + 1;
+        repairUnit.repairPoints.Add(new KeyValuePair<int, bool>(this.Id, false));
     }
 
     public void Use()
@@ -31,7 +32,7 @@ public class SCR_RepairPoint : MonoBehaviour, IInteract
         partRequired.SetActive(false);
 
         repaired = true;
-        repairRoom.UpdateRepairPoint(Id);
+        repairUnit.UpdateRepairPoint(Id);
     }
 
     public bool CanInteract()

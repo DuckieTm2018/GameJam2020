@@ -50,6 +50,7 @@ public class SCR_Pickups : MonoBehaviour, IInteract
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 held = false;
+                handContainer.InUse = true;
 
                 transform.parent = null;
                 rb.constraints = RigidbodyConstraints.None;
@@ -58,6 +59,7 @@ public class SCR_Pickups : MonoBehaviour, IInteract
             else if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 held = false;
+                handContainer.InUse = true;
 
                 transform.parent = null;
                 rb.constraints = RigidbodyConstraints.None;

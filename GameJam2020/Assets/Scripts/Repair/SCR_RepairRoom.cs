@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class SCR_RepairRoom : MonoBehaviour
 {
     public string RoomName;
-    public List<KeyValuePair<int, bool>> repairPoints = new List<KeyValuePair<int, bool>>();
+    public List<KeyValuePair<int, bool>> repairUnits = new List<KeyValuePair<int, bool>>();
     public float countDownSeconds;
     public bool isRoomRepaired;
     public bool startRoom;
@@ -49,13 +49,13 @@ public class SCR_RepairRoom : MonoBehaviour
         active = true;
     }
 
-    internal void UpdateRepairPoint(int id)
+    internal void UpdateRepairUnits(int id)
     {
         Debug.Log($"Point {id} for {RoomName} has been repaired.");
-        repairPoints.RemoveAll(r => r.Key == id);
-        repairPoints.Add(new KeyValuePair<int, bool>(id, true));
+        repairUnits.RemoveAll(r => r.Key == id);
+        repairUnits.Add(new KeyValuePair<int, bool>(id, true));
 
-        if(repairPoints.FindAll(r => r.Value).Count == repairPoints.Count) 
+        if(repairUnits.FindAll(r => r.Value).Count == repairUnits.Count) 
         {
             Debug.Log($"Room {RoomName} has been repaired.");
 
