@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IInteract
 {
     void Use();
+    bool CanInteract();
 }

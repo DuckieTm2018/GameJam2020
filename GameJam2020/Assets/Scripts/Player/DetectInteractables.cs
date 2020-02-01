@@ -9,6 +9,7 @@ public class DetectInteractables : MonoBehaviour
     public Canvas uiCanvas;
     public Text uiText;
     public RaycastHit hit;
+    public float raycastLength;
 
     // Start is called before the first frame update
     void Start()
@@ -22,29 +23,28 @@ public class DetectInteractables : MonoBehaviour
         //RaycastHit hit;
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition) ;
 
-        var hits = Physics.RaycastAll(ray, 5.0f);
+        var hits = Physics.RaycastAll(ray, raycastLength);
+
+        uiText.enabled = false;
 
         foreach (var hit in hits) 
         { 
             Transform objectHit = hit.transform;
             IInteract interactable = hit.collider.gameObject.GetComponent<IInteract>();
 
-            if (interactable != null)
+            if (interactable != null && interactable.CanInteract())
             {
                 uiText.enabled = true;
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-   
                     Debug.Log("can interact with object.");
                     interactable.Use();
                 }
-            }
-            else
-            {
-                uiText.enabled = false;
+                break;
             }
         }
+
         if(hits.Length == 0) 
         { 
             uiText.enabled = false;

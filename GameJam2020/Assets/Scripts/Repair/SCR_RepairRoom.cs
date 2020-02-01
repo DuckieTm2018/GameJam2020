@@ -48,7 +48,7 @@ public class SCR_RepairRoom : MonoBehaviour
     internal void Activate() 
     {
         Debug.Log($"{RoomName}'s timer has started.");
-        countDown = countDownSeconds * 60;
+        countDown = countDownSeconds;
         active = true;
     }
 
@@ -79,6 +79,6 @@ public class SCR_RepairRoom : MonoBehaviour
     {
         Debug.Log($"Time Ran out.");
         Screen.lockCursor = false;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("GameOverMenu");
     }
 }

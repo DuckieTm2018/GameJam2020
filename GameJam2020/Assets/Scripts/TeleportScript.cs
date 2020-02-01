@@ -18,4 +18,9 @@ public class TeleportScript : MonoBehaviour, IInteract
         Debug.Log("Teleport!");
         player.transform.position = otherTeleport.transform.position + otherTeleport.transform.TransformDirection(new Vector3(0, -0, -1f));
     }
+
+    public bool CanInteract()
+    {
+        return true;
+    }
 }
