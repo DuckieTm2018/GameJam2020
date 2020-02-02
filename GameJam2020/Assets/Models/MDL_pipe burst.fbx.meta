@@ -7,20 +7,30 @@ ModelImporter:
     100002: pCylinder1
     100004: pCylinder24
     100006: pCylinder25
+    100008: pCylinder27
+    100010: pCylinder33
     400000: //RootNode
     400002: pCylinder1
     400004: pCylinder24
     400006: pCylinder25
+    400008: pCylinder27
+    400010: pCylinder33
     2100000: lambert1
     2300000: pCylinder1
     2300002: pCylinder24
     2300004: pCylinder25
+    2300006: pCylinder27
+    2300008: pCylinder33
     3300000: pCylinder1
     3300002: pCylinder24
     3300004: pCylinder25
+    3300006: pCylinder27
+    3300008: pCylinder33
     4300000: pCylinder1
     4300002: pCylinder24
     4300004: pCylinder25
+    4300006: pCylinder27
+    4300008: pCylinder33
   externalObjects: {}
   materials:
     importMaterials: 1
