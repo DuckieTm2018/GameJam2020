@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerHands
   - Ladder
+  - Sparking
   layers:
   - Default
   - TransparentFX
