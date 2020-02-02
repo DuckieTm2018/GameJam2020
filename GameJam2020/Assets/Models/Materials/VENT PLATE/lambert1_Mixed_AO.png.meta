@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GameJam2020/Assets/CharacterAssets/initialShadingGroup_Height.png.meta
+guid: 5a7d513ce9efe65418303b74444e05ab
+=======
 guid: 9812919656d27c447b9bacc18b7bedbd
+>>>>>>> 0e2f5f58ff940bb0d803ea2a755d2227d2b9e542:GameJam2020/Assets/Models/Materials/VENT PLATE/lambert1_Mixed_AO.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GameJam2020/Assets/CharacterAssets/initialShadingGroup_Mixed_AO.png.meta
+guid: 0c40599acbf6c284696e3e684d8ca5e0
+=======
 guid: 597227b50d886d14681c5aa408f68b1c
+>>>>>>> 0e2f5f58ff940bb0d803ea2a755d2227d2b9e542:GameJam2020/Assets/Models/Materials/pipe angle piece/lambert1_Height.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

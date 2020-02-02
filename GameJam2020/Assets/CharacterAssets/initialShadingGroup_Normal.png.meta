@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:GameJam2020/Assets/CharacterAssets/initialShadingGroup_Metallic.png.meta
-guid: c1e65204f54321b4c9a244c8339dff32
-=======
-guid: f218f6a8c677cb443995221eef34400b
->>>>>>> 0e2f5f58ff940bb0d803ea2a755d2227d2b9e542:GameJam2020/Assets/Models/Materials/burst pipe/lambert1_Base_Color.png.meta
+guid: cc4868b7449595a469b7804000f48045
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -11,7 +7,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -55,7 +51,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 1
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GameJam2020/Assets/CharacterAssets/initialShadingGroup_Base_Color.png.meta
+guid: f1ce4d78aa47f5842bb6cbb8477da391
+=======
 guid: 4cf242b9b865b9047825967e64fd7104
+>>>>>>> 0e2f5f58ff940bb0d803ea2a755d2227d2b9e542:GameJam2020/Assets/Models/Materials/pipe short/lambert1_Metallic.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
