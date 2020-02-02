@@ -38,6 +38,25 @@ public class SCR_CharacterController : MonoBehaviour
         
     }
 
+    public bool canClimb = false;
+    public float climbSpeed = 1f;
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Ladder")
+        {
+            canClimb = true;
+        }
+    }
+
+    void OnCollisionExit(Collision col2)
+    {
+        if (col2.gameObject.tag == "Ladder")
+        {
+            canClimb = false;
+        }
+    }
+
     void Update()
     {
         currentVelocity = (rigidbody.velocity.x + rigidbody.velocity.z);
@@ -99,6 +118,29 @@ public class SCR_CharacterController : MonoBehaviour
                 sphere.enabled = false;
                 capsule.enabled = true;
                 anim.SetBool("Crouch_Walk", false);
+            }
+
+            if (canClimb)
+            {
+                if (Input.GetKey(KeyCode.W))
+                {
+                    rigidbody.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
+                    anim.SetBool("isClimbing", true);
+                }
+                else
+                {
+                    anim.SetBool("isClimbing", false);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    rigidbody.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
+                    anim.SetBool("isClimbing", true);
+                }
+                else
+                {
+                    anim.SetBool("isClimbing", false);
+                }
+                
             }
         }
         // We apply gravity manually for more turning control
