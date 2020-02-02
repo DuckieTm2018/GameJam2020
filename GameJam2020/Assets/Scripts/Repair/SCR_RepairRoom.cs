@@ -11,7 +11,7 @@ public class SCR_RepairRoom : MonoBehaviour
     public List<KeyValuePair<int, bool>> repairUnits = new List<KeyValuePair<int, bool>>();
     public float countDownSeconds;
     public bool isRoomRepaired;
-    public bool startRoom;
+    public bool isStartRoom;
     public bool isTimed;
   
     public GameObject nextRoom;
@@ -24,6 +24,9 @@ public class SCR_RepairRoom : MonoBehaviour
     {
         if(nextRoom != null)
             nextRepairRoom = nextRoom.GetComponent<SCR_RepairRoom>();
+
+        if (isStartRoom)
+            Activate();
     }
 
     // Update is called once per frame

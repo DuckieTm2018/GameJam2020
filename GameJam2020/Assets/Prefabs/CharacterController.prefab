@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 240447900}
   m_Layer: 0
   m_Name: CharacterController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 3144899559758843324}
   m_Layer: 0
   m_Name: Held
-  m_TagString: Untagged
+  m_TagString: PlayerHands
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

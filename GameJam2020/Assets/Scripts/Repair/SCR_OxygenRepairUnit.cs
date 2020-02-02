@@ -16,7 +16,6 @@ public class SCR_OxygenRepairUnit : BaseRepairUnit
         Debug.Log("Repaired oxygen console.");
         if (!base.repaired) 
         {
-            base.Repaired();
             base.repairRoom.countDown += addedTimeOnRepair;
         }
     }
@@ -24,7 +23,8 @@ public class SCR_OxygenRepairUnit : BaseRepairUnit
     // Start is called before the first frame update
     void Start()
     {
-        base.Start();
+        // Don't call base.Start(), this console doesn't need to be repaired to stop the room count down.
+        base.repairRoom = room.GetComponent<SCR_RepairRoom>();
         base.requiresParts = false;
     }
 
