@@ -318,6 +318,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1041094539}
   m_PrefabAsset: {fileID: 0}
+--- !u!111 &691783570
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691783569}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1da0964418acba645b7906e340b421a6, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 1da0964418acba645b7906e340b421a6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &691783571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sparks: []
+  used: 0
 --- !u!65 &691783572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -747,6 +764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803724588296557616, guid: aca8db2d9e7c3354cb061aa2df5370cb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca8db2d9e7c3354cb061aa2df5370cb, type: 3}
