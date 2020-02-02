@@ -14,6 +14,8 @@ public class SCR_CharacterController : MonoBehaviour
     public float maxVelocityChange = 10.0f;
     public bool canJump = true;
     public float jumpHeight = 2.0f;
+    public float stunTime;
+    public bool stunned = false;
     private bool grounded = false;
 
     private float height;
@@ -57,85 +59,101 @@ public class SCR_CharacterController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Sparking")
+        {
+            StartCoroutine(StunTimer());
+        }
+    }
+
     void Update()
     {
-        currentVelocity = (rigidbody.velocity.x + rigidbody.velocity.z);
-        currentVelocity = Mathf.Abs(currentVelocity);
-
-        if (grounded)
+        if (stunned == false)
         {
-            anim.SetFloat("Speed", currentVelocity);
+            currentVelocity = (rigidbody.velocity.x + rigidbody.velocity.z);
+            currentVelocity = Mathf.Abs(currentVelocity);
 
-            // Calculate how fast we should be moving
-            Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            targetVelocity = transform.TransformDirection(targetVelocity);
-            targetVelocity *= speed;
-            // Apply a force that attempts to reach our target velocity
-            Vector3 velocity = rigidbody.velocity;
-            Vector3 velocityChange = (targetVelocity - velocity);
-            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
-            velocityChange.y = 0;
-            rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
-
-            // Jump
-            if (canJump && Input.GetButton("Jump"))
+            if (grounded)
             {
-                anim.SetTrigger("Jump");
-                rigidbody.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
-            }
+                anim.SetFloat("Speed", currentVelocity);
 
-            if (Input.GetKey(KeyCode.LeftShift) && targetVelocity.x > 0 && targetVelocity.z > 0)
-            {
-                speed = runSpeed;
-                anim.SetBool("isRunning", true);
-                sphere.enabled = false;
-                capsule.enabled = true;
-            }
-            else
-            {
-                speed = walkSpeed;
-                sphere.enabled = false;
-                capsule.enabled = true;
-                anim.SetBool("isRunning", false);
-            }
+                // Calculate how fast we should be moving
+                Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                targetVelocity = transform.TransformDirection(targetVelocity);
+                targetVelocity *= speed;
+                // Apply a force that attempts to reach our target velocity
+                Vector3 velocity = rigidbody.velocity;
+                Vector3 velocityChange = (targetVelocity - velocity);
+                velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+                velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+                velocityChange.y = 0;
+                rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
 
-
-            if (Input.GetKey(KeyCode.LeftControl))
-            {
-                speed = crouchSpeed;
-                //capsule.height = 0.5f;
-                //capsule.center = new Vector3(capsule.center.x, 0.25f, capsule.center.z);
-
-                sphere.enabled = true;
-                capsule.enabled = false;
-
-                anim.SetBool("Crouch_Walk", true);
-            }
-            else
-            {
-                speed = walkSpeed;
-                sphere.enabled = false;
-                capsule.enabled = true;
-                anim.SetBool("Crouch_Walk", false);
-            }
-
-            if (canClimb)
-            {
-                if (Input.GetKey(KeyCode.W))
+                // Jump
+                if (canJump && Input.GetButton("Jump"))
                 {
-                    rigidbody.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
-                    anim.SetBool("isClimbing", true);
+                    anim.SetTrigger("Jump");
+                    rigidbody.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
                 }
-                if (Input.GetKey(KeyCode.S))
+
+                if (Input.GetKey(KeyCode.LeftShift) && targetVelocity.x > 0 && targetVelocity.z > 0)
                 {
-                    rigidbody.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
-                    anim.SetBool("isClimbing", true);
+                    speed = runSpeed;
+                    anim.SetBool("isRunning", true);
+                    sphere.enabled = false;
+                    capsule.enabled = true;
                 }
-            }
-            else
-            {
-                anim.SetBool("isClimbing", false);
+                else
+                {
+                    speed = walkSpeed;
+                    sphere.enabled = false;
+                    capsule.enabled = true;
+                    anim.SetBool("isRunning", false);
+                }
+
+
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    speed = crouchSpeed;
+                    //capsule.height = 0.5f;
+                    //capsule.center = new Vector3(capsule.center.x, 0.25f, capsule.center.z);
+
+                    sphere.enabled = true;
+                    capsule.enabled = false;
+
+                    anim.SetBool("Crouch_Walk", true);
+                }
+                else
+                {
+                    speed = walkSpeed;
+                    sphere.enabled = false;
+                    capsule.enabled = true;
+                    anim.SetBool("Crouch_Walk", false);
+                }
+
+                if (canClimb)
+                {
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        rigidbody.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
+                        anim.SetBool("isClimbing", true);
+                    }
+                    else
+                    {
+                        anim.SetBool("isClimbing", false);
+                    }
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        rigidbody.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
+                        anim.SetBool("isClimbing", true);
+                    }
+                    else
+                    {
+                        anim.SetBool("isClimbing", false);
+                    }
+
+                }
             }
         }
         // We apply gravity manually for more turning control
@@ -154,5 +172,13 @@ public class SCR_CharacterController : MonoBehaviour
         // From the jump height and gravity we deduce the upwards speed 
         // for the character to reach at the apex.
         return Mathf.Sqrt(2 * jumpHeight * gravity);
+    }
+
+    IEnumerator StunTimer()
+    {
+        stunned = true;
+        yield return new WaitForSeconds(stunTime);
+        stunned = false;
+        Debug.Log("ZAP");
     }
 }

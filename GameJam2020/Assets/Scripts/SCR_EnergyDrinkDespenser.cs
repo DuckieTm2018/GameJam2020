@@ -10,6 +10,7 @@ public class SCR_EnergyDrinkDespenser : MonoBehaviour, IInteract
     public float playerSpeedIncrease;
     public float activeEffectTime;
     public bool timerActive;
+    public Animation anim;
     private float timer;
 
     public bool CanInteract()
@@ -19,6 +20,7 @@ public class SCR_EnergyDrinkDespenser : MonoBehaviour, IInteract
 
     public void Use()
     {
+        anim.Play();
         timer = activeEffectTime;
 
         if (!timerActive)
