@@ -4,11 +4,26 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCylinder25
+    100004: pCylinder27
+    100006: pCylinder33
     400000: //RootNode
+    400002: pCylinder25
+    400004: pCylinder27
+    400006: pCylinder33
     2100000: lambert1
     2300000: //RootNode
+    2300002: pCylinder25
+    2300004: pCylinder27
+    2300006: pCylinder33
     3300000: //RootNode
+    3300002: pCylinder25
+    3300004: pCylinder27
+    3300006: pCylinder33
     4300000: pCylinder1
+    4300002: pCylinder25
+    4300004: pCylinder27
+    4300006: pCylinder33
   externalObjects: {}
   materials:
     importMaterials: 1
