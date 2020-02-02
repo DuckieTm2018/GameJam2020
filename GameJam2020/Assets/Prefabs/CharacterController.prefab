@@ -235,7 +235,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864694723872748585}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -300,6 +300,8 @@ MonoBehaviour:
   maxVelocityChange: 10
   canJump: 1
   jumpHeight: 2
+  stunTime: 0
+  stunned: 0
   capsule: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
@@ -463,7 +465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864694724929913976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.141, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 864694723923525638}
@@ -559,11 +561,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 57c8cf5106ddef74885a57257fc30efc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.663
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 57c8cf5106ddef74885a57257fc30efc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.673
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 57c8cf5106ddef74885a57257fc30efc, type: 3}
       propertyPath: m_LocalRotation.x
