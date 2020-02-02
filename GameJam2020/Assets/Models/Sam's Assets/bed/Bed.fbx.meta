@@ -23,7 +23,12 @@ ModelImporter:
     2300000: pCube66
     3300000: pCube66
     4300000: pCube66
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 9a79cfc0b5b52ed49ac68394fee9bfc7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,7 +59,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 60
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

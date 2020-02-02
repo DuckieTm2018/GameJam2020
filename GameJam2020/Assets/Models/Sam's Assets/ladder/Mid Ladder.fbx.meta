@@ -75,7 +75,12 @@ ModelImporter:
     2300000: pSphere23
     3300000: pSphere23
     4300000: pSphere23
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 234fdce1c6d33e7428b69a7b1f8433c0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -106,7 +111,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
