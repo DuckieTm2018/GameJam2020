@@ -127,20 +127,15 @@ public class SCR_CharacterController : MonoBehaviour
                     rigidbody.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
                     anim.SetBool("isClimbing", true);
                 }
-                else
-                {
-                    anim.SetBool("isClimbing", false);
-                }
                 if (Input.GetKey(KeyCode.S))
                 {
                     rigidbody.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
                     anim.SetBool("isClimbing", true);
                 }
-                else
-                {
-                    anim.SetBool("isClimbing", false);
-                }
-                
+            }
+            else
+            {
+                anim.SetBool("isClimbing", false);
             }
         }
         // We apply gravity manually for more turning control
