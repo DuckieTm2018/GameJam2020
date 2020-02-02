@@ -18,7 +18,7 @@ public class SCR_RepairPoint : MonoBehaviour, IInteract
     {
         pickup = partRequired.GetComponent<SCR_Pickups>();
         repairUnit = unit.GetComponent<BaseRepairUnit>();
-        brokenObject.SetActive(false);
+        fixedObject.SetActive(false);
 
         Id = repairUnit.repairPoints.Count + 1;
         repairUnit.repairPoints.Add(new KeyValuePair<int, bool>(this.Id, false));
