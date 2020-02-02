@@ -12,10 +12,11 @@ public class SCR_RepairRoom : MonoBehaviour
     public float countDownSeconds;
     public bool isRoomRepaired;
     public bool startRoom;
+    public bool isTimed;
   
     public GameObject nextRoom;
     private SCR_RepairRoom nextRepairRoom;
-    private bool active;
+    private bool timerActive;
     public float countDown;
 
 
@@ -28,11 +29,11 @@ public class SCR_RepairRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (active) 
+        if (timerActive) 
         {
             if (countDown <= 0.0f) 
             {
-                active = false;
+                timerActive = false;
                 TimeRanOut();
             }
             else if (countDown > 0.0f)
@@ -44,9 +45,12 @@ public class SCR_RepairRoom : MonoBehaviour
 
     internal void Activate() 
     {
-        Debug.Log($"{RoomName}'s timer has started.");
-        countDown = countDownSeconds;
-        active = true;
+        if (isTimed) 
+        {
+            Debug.Log($"{RoomName}'s timer has started.");
+            countDown = countDownSeconds;
+            timerActive = true;
+        }
     }
 
     internal void UpdateRepairUnits(int id)
@@ -59,7 +63,7 @@ public class SCR_RepairRoom : MonoBehaviour
         {
             Debug.Log($"Room {RoomName} has been repaired.");
 
-            active = false;
+            timerActive = false;
             isRoomRepaired = true;
             if (nextRepairRoom == null) 
             {

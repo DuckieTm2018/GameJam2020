@@ -16,8 +16,14 @@ public abstract class BaseRepairUnit : MonoBehaviour, IInteract
     {
         repairRoom = room.GetComponent<SCR_RepairRoom>();
 
-        Id = repairRoom.repairUnits.Count + 1;
-        repairRoom.repairUnits.Add(new KeyValuePair<int, bool>(this.Id, false));
+        var roomUnits = repairRoom.repairUnits;
+
+        if(roomUnits == null)
+            repairRoom.repairUnits  = new List<KeyValuePair<int, bool>>();
+
+        Id = roomUnits.Count + 1;
+
+        repairRoom.repairUnits.Add(new KeyValuePair<int, bool>(Id, false));
     }
 
     // Update is called once per frame
