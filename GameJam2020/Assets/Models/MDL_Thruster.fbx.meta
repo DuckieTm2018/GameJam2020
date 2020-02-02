@@ -1,20 +1,32 @@
 fileFormatVersion: 2
-guid: bf22c6173d1301b499c8a89a6439910b
+guid: c7d749d8c45ffe1428a268bb4dbac42c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert5
+    2100000: EnginePipe
+    2100002: thrusteraccent
+    2100004: Thruster
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube1
+    4300000: Thruster1
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: ce738933f87275944b654d79222c8eea, type: 2}
+      name: EnginePipe
+    second: {fileID: 2100000, guid: f59764671a9c44942ae871c8972822af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thruster
+    second: {fileID: 2100000, guid: 791ce35d9c6d91741b00055d8c484cff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: thrusteraccent
+    second: {fileID: 2100000, guid: 78bd3b54f504e544db3948ad4f3163ad, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +57,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.25
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
