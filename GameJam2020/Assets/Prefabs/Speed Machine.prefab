@@ -165,6 +165,8 @@ GameObject:
   - component: {fileID: 8460115429329874309}
   - component: {fileID: 4202893217827284577}
   - component: {fileID: 9077560667271417917}
+  - component: {fileID: 4902518740580662508}
+  - component: {fileID: 5334766624313080534}
   m_Layer: 0
   m_Name: Speed Machine
   m_TagString: Untagged
@@ -221,6 +223,41 @@ MonoBehaviour:
   playerSpeedIncrease: 10
   activeEffectTime: 5
   timerActive: 0
+  anim: {fileID: 0}
+--- !u!111 &4902518740580662508
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460115429330104741}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ce4761cb3834c4c42bb8dca07c4af6e3, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &5334766624313080534
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460115429330104741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc7145b957616e5459e6071ffc463528, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8460115429330104743
 GameObject:
   m_ObjectHideFlags: 0
