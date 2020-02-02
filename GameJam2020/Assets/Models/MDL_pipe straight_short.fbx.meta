@@ -21,7 +21,12 @@ ModelImporter:
     4300000: pCylinder1
     4300002: pCylinder24
     4300004: pCylinder25
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 8e3a8cf7b348add4095f2f1b11116730, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -52,7 +57,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 20
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
