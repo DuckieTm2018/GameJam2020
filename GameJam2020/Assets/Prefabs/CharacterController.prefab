@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc369a1e7625a114e80e96a17969cfb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 864694723872748578}
   runSpeed: 10
   walkSpeed: 5
   crouchSpeed: 2
@@ -300,8 +300,6 @@ MonoBehaviour:
   maxVelocityChange: 10
   canJump: 1
   jumpHeight: 2
-  stunTime: 0
-  stunned: 0
   capsule: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
